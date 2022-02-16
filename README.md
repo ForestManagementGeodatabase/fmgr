@@ -18,12 +18,12 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 
 ## Description
 
-<img src="man/figures/r_logo.png" width=125 align="left"  />
+<img src="man/figures/r_logo.png" width=75 align="left"  />
 
 The `fmgr` R package contains functions for producing standard reporting
 products from the Forest Management Geodatabase (FMG).
 
-<img src="man/figures/HDQLO-03_h120.jpg" align="right" />
+<img src="man/figures/HDQLO-03_h120.jpg" width=125 align="right" />
 
 ## Funding
 
