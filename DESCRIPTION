@@ -1,0 +1,27 @@
+Package: fmgr
+Type: Package
+Title: Forest Management Geodatabase in R
+Version: 0.1.1
+Authors@R: c(
+  person("Michael", "Dougherty", 
+         email = "Michael.P.Dougherty@usace.army.mil", 
+         role = c("aut", "cre"))
+         )
+Description: This package contains functions for creating standard Forest 
+    Management Geodatabase (FMG) reports. 
+License: file LICENSE
+URL: https://github.com/ForestManagementGeodatabase/fmgr
+BugReports: https://github.com/ForestManagementGeodatabase/fmgr/issues
+Depends: R (>= 2.10)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Suggests: 
+    knitr,
+    testthat (>= 3.0.0),
+    rmarkdown
+Imports: 
+    sf,
+    readr
+Config/testthat/edition: 3
+VignetteBuilder: knitr
