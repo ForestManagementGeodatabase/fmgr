@@ -25,5 +25,4 @@ set_pandoc <- function() {
   
   # Determine if pandoc is available
   message(paste("Pandoc available: ", rmarkdown::pandoc_available()))
-  
 }
