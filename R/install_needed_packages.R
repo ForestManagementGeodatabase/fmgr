@@ -4,18 +4,30 @@
 #' 
 #' @export
 #' @param need_pkgs      A character vector of package names.
+#' @param source         character; Indicating if the packages should be 
+#'                       compiled from source ("yes", "no"). 
 #' 
 #' @return Installs the requested packages.
 #' 
-install_needed_packages <- function(need_pkgs) {
+install_needed_packages <- function(need_pkgs, source = "no") {
+  # Check inputs
+  if(!is.vector(need_pkgs, mode = "character")) {
+    stop("need_pkgs must be a character vector of package names")}
+  if(length(need_pkgs) < 1) {
+    stop("need_pkgs must contain at least one package")}
+  if(!(source %in% c("yes", "no"))) {
+    stop("source must be either 'yes' or 'no'")}
+  if(!(length(source) == 1)) {
+    stop("source must be character with a single value")}
+  
   # Set CRAN repository
   message("Setting CRAN repository...")
   r <- getOption("repos")
   r["CRAN"] <- "https://cran.rstudio.com/"
   options(repos = r)
   
-  # Don't compile from source
-  #options(install.packages.check.source = "no")
+  # Set if package will be compiled from source
+  options(install.packages.check.source = source)
   
   # Update existing packages
   message("Updating packages...")
