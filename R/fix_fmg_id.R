@@ -3,6 +3,7 @@
 #' @description Converts the FMG unique identifier fields to the current 
 #' standard from any variant that has been in use over the life of the project.
 #' 
+#' @export
 #' @param df    data frame; A FMG data frame. 
 #' 
 #' @details The current requirement for the stand unique id is `Site_ID`. 
@@ -11,7 +12,12 @@
 #' @return A FMG data frame with the currently used unique identifier field 
 #' names.
 #' 
+#' @importFrom dplyr rename
+#' 
 fix_fmg_id <- function(df) {
+  # Check inputs
+  if(!is.data.frame(df)) {stop("df must be a data frame")}
+  
   # Rename previous ID fields to `Site_ID`
   if("SITE_NEW" %in% colnames(df)) {
     df <- dplyr::rename(df, Site_ID = SITE_NEW)
